@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package prime;
+
+option go_package = "github.com/raissov/primeNumCalculator";
+
+message PrimeRequest {
+  int64 number = 1;
+}
+
+message PrimeResponse {
+  int64 prime = 1;
+}
+
+service PrimeService {
+  rpc Prime(PrimeRequest) returns (stream PrimeResponse) {};
+}
